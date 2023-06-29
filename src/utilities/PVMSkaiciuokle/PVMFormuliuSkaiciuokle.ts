@@ -1,11 +1,8 @@
-import { ITaxProps } from "./types";
-
-
-export const calculateTax = ({ sumNoTax, taxRate }: ITaxProps) => {
+export const calculateTax = (sumNoTax: number, taxRate: number) => {
   return (sumNoTax * taxRate) / 100;
 };
 
-export const calculateSumWithTax = ({ sumNoTax, taxRate }: ITaxProps) => {
-  const taxAmount: number = calculateTax({ sumNoTax, taxRate });
+export const calculateSumWithTax = (sumNoTax: number, taxRate: number) => {
+  const taxAmount: number = calculateTax(sumNoTax, taxRate);
   return (sumNoTax + taxAmount).toFixed(2);
 };

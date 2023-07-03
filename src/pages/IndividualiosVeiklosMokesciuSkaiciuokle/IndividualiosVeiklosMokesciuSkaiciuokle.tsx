@@ -117,7 +117,11 @@ const IndividualiosVeiklosMokesciuSkaiciuokle = () => {
     const finalProfit =
       profit - parseFloat(PSD) - parseFloat(VSD) - parseFloat(GPM);
     const finalAllTaxes = profit - finalProfit;
-    const finalTaxPercent = (finalAllTaxes / profit) * 100;
+
+    let finalTaxPercent =
+      profit >= 0
+        ? (finalAllTaxes / profit) * 100
+        : (Math.abs(finalAllTaxes) / profit) * 100;
 
     setFinalIncome(finalProfit.toFixed(2).toString());
     setFinalTaxes(finalAllTaxes.toFixed(2).toString());

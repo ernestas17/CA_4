@@ -19,10 +19,12 @@ export const StyledIndividualiosVeiklosMokesciuSkaiciuokle = styled.div`
     padding-left: 0;
   }
 
-  .radio {
-    input {
-      margin-right: 7px;
-    }
+  .checkbox {
+    color: #4a4a4a;
+  }
+
+  .radio input {
+    margin-right: 13px;
   }
 `;
 

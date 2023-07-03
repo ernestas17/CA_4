@@ -86,7 +86,7 @@ const IndividualiosVeiklosMokesciuSkaiciuokle = () => {
     const vsdValue = vsdInput ? parseFloat(vsdInput.value) || 0 : 0;
 
     const VSDAmount =
-      (additionalPension
+      (!additionalPension
         ? calculateProfit() * 0.9 * 0.1552
         : calculateProfit() * 0.9 * 0.1252) - vsdValue;
     setVSD(!isNaN(VSDAmount) ? VSDAmount.toFixed(2).toString() : '');

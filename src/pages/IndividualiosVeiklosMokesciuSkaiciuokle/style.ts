@@ -18,6 +18,12 @@ export const StyledIndividualiosVeiklosMokesciuSkaiciuokle = styled.div`
     align-items: flex-start;
     padding-left: 0;
   }
+
+  .radio {
+    input {
+      margin-right: 7px;
+    }
+  }
 `;
 
 export const StyledResultsRow = styled.div`

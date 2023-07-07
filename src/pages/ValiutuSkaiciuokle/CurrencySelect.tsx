@@ -21,6 +21,7 @@ const CurrencySelect = ({ onAddCurrency }: ICurrencySelectProps) => {
     id: '',
     value: 0,
     rawValue: '',
+    convertedValue: 0,
   });
 
   const getFlagURL = (currency: string) => {
@@ -45,12 +46,14 @@ const CurrencySelect = ({ onAddCurrency }: ICurrencySelectProps) => {
     const inputValue = e.target.value ? parseFloat(e.target.value) : 0;
     const conversionRate = conversion?.data[selectedCurrency];
 
-    setActiveInput({
-      id: selectedCurrency,
-      value: inputValue,
-      rawValue: e.target.value,
-      convertedValue: inputValue * conversionRate,
-    });
+    if (conversionRate) {
+      setActiveInput({
+        id: selectedCurrency,
+        value: inputValue,
+        rawValue: e.target.value,
+        convertedValue: inputValue * conversionRate,
+      });
+    }
   };
   return (
     <StyledCurrencySelectList>
